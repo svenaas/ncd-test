@@ -79,25 +79,23 @@ ga:
 primary_navigation:
   - name: Home
     url: /
-  - name: Blog
-    url: /blog/
-  - name: Document
-    url: /document/
-  - name: Document with sidenav
-    url: /document-with-sidenav/
-  - name: Document submenu
-    children:
-      - name: Navigation link
+  - name: Newsroom
+    url: /newsroom/
+  - name: Reports
+    url: /reports/
+  - name: Correspondence
+    url: /correspondence/
+  - name: Accountability
+    url: /accountability/
+  - name: FOIA
+      url: /FOIA/
+   - name: About
         url: "#main-content"
-      - name: Navigation link
-        url: "#main-content"
-      - name: Navigation link
-        url: "#main-content"
-
+    
 secondary_navigation:
-  - name: Secondary link
+  - name: TBD
     url: "#main-content"
-  - name: Another secondary link
+  - name: TBD secondary link
     url: "#main-content"
 
 # Search.gov configuration
