@@ -88,9 +88,9 @@ primary_navigation:
   - name: Accountability
     url: /accountability/
   - name: FOIA
-      url: /FOIA/
-   - name: About
-        url: "#main-content"
+    url: /FOIA/
+  - name: About
+    url: "#main-content"
     
 secondary_navigation:
   - name: TBD
