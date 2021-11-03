@@ -12,9 +12,85 @@ publish_mode: editorial_workflow
 logo_url: https://federalist.18f.gov/assets/images/federalist-logo.png
 
 collections:
-  - label: Posts
+  - label: Correspondence
+    name: correspondence
+    folder: _correspondence/
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'post'}
+      - {label: "Title", name: "title", widget: "string"}
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          format: 'MMMM D, YYYY',
+          dateFormat: 'MMMM D, YYYY',
+          timeFormat: false
+        }
+      - {label: "Body", name: "body", widget: "markdown"}
+  - label: Meetings & Events
+    name: meetings
+    folder: _meetings/
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'post'}
+      - {label: "Title", name: "title", widget: "string"}
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          format: 'MMMM D, YYYY',
+          dateFormat: 'MMMM D, YYYY',
+          timeFormat: false
+        }
+      - {label: "Body", name: "body", widget: "markdown"}
+  - label: Newsroom
     name: posts
     folder: _posts/
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'post'}
+      - {label: "Title", name: "title", widget: "string"}
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          format: 'MMMM D, YYYY',
+          dateFormat: 'MMMM D, YYYY',
+          timeFormat: false
+        }
+      - {label: "Body", name: "body", widget: "markdown"}
+  - label: Publications
+    name: publications
+    folder: _publications/
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'post'}
+      - {label: "Title", name: "title", widget: "string"}
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          format: 'MMMM D, YYYY',
+          dateFormat: 'MMMM D, YYYY',
+          timeFormat: false
+        }
+      - {label: "Body", name: "body", widget: "markdown"}
+  - label: Reports
+    name: reports
+    folder: _reports/
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
