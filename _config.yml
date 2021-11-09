@@ -83,8 +83,8 @@ primary_navigation:
     url: /newsroom/
   - name: Reports
     url: /reports/
-  - name: Correspondences
-    url: /correspondences/
+  - name: Correspondence
+    url: /correspondence/
   - name: Meetings & Events
     url: /meetings/
   - name: Publications
@@ -156,7 +156,7 @@ pagination:
   enabled: true
   debug: true
   collection: "posts"
-  per_page: 3
+  per_page: 5
   # The permalink structure for the paginated pages (this can be any level deep)
   permalink: "/page/:num/" # Pages are index.html inside this folder (default)
   #permalink: '/page/:num.html' # Pages are simple html files
