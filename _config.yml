@@ -83,8 +83,8 @@ primary_navigation:
     url: /newsroom/
   - name: Reports
     url: /reports/
-  - name: Correspondence
-    url: /correspondence/
+  - name: Correspondences
+    url: /correspondences/
   - name: Meetings & Events
     url: /meetings/
   - name: Publications
@@ -93,10 +93,10 @@ primary_navigation:
     url: "/#main-content"
 
 secondary_navigation:
-  - name: TBD
-    url: "#main-content"
-  - name: TBD secondary link
-    url: "#main-content"
+  - name: Contact US
+    url: "contact"
+  - name: Accountability
+    url: "Accountability"
 
 # Search.gov configuration
 #
