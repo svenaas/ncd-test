@@ -1,3 +1,4 @@
+## Comment out when doing local development
 backend:
   name: github
   repo: nsabula/ncd-test
@@ -6,8 +7,22 @@ backend:
   preview_context: federalist/build
   branch: main
 
-media_folder: assets/uploads
-public_folder: /images/uploads
+##
+## Uncomment when doing local development on Netlify CMS
+## Run `npx netlify-cms-proxy-server` to start working locally
+## In another terminal, start the app with `npm start`
+## See https://www.netlifycms.org/docs/beta-features/#working-with-a-local-git-repository
+##
+
+# backend:
+#   name: git-gateway
+# local_backend: true
+
+##
+##
+
+media_folder: _assets
+public_folder: /
 publish_mode: editorial_workflow
 logo_url: https://federalist.18f.gov/assets/images/federalist-logo.png
 
@@ -16,94 +31,218 @@ collections:
     name: correspondence
     folder: _correspondence/
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
       preview: false
     fields:
-      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'post'}
-      - {label: "Title", name: "title", widget: "string"}
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
+      - { label: 'Title', name: 'title', widget: 'string' }
       - {
-          label: "Publish Date",
-          name: "date",
-          widget: "datetime",
+          label: 'Publish Date',
+          name: 'date',
+          widget: 'datetime',
           format: 'MMMM D, YYYY',
-          dateFormat: 'MMMM D, YYYY',
-          timeFormat: false
+          date_format: 'MMMM D, YYYY',
+          time_format: false,
         }
-      - {label: "Body", name: "body", widget: "markdown"}
+      - { label: 'Body', name: 'body', widget: 'markdown' }
   - label: Meetings & Events
     name: meetings
     folder: _meetings/
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
       preview: false
     fields:
-      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'post'}
-      - {label: "Title", name: "title", widget: "string"}
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
+      - { label: 'Title', name: 'title', widget: 'string' }
       - {
-          label: "Publish Date",
-          name: "date",
-          widget: "datetime",
+          label: 'Publish Date',
+          name: 'date',
+          widget: 'datetime',
           format: 'MMMM D, YYYY',
-          dateFormat: 'MMMM D, YYYY',
-          timeFormat: false
+          date_format: 'MMMM D, YYYY',
+          time_format: false,
         }
-      - {label: "Body", name: "body", widget: "markdown"}
+      - { label: 'Body', name: 'body', widget: 'markdown' }
   - label: Newsroom
     name: posts
     folder: _posts/
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
-      preview: false
+      preview: true
     fields:
-      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'post'}
-      - {label: "Title", name: "title", widget: "string"}
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
+      - { label: 'Title', name: 'title', widget: 'string' }
       - {
-          label: "Publish Date",
-          name: "date",
-          widget: "datetime",
+          label: 'Publish Date',
+          name: 'date',
+          widget: 'datetime',
           format: 'MMMM D, YYYY',
-          dateFormat: 'MMMM D, YYYY',
-          timeFormat: false
+          date_format: 'MMMM D, YYYY',
+          time_format: false,
         }
-      - {label: "Body", name: "body", widget: "markdown"}
+      - { label: 'Excerpt', name: 'excerpt', required: false, widget: 'text' }
+      - {
+          label: 'Newsroom Type',
+          name: 'newsroom_type',
+          required: true,
+          widget: 'select',
+          options:
+            ['Funding Opportunities', 'Speech', 'Testimonial', 'Newsletter'],
+          default: 'Newsletter',
+        }
+      - {
+          label: 'NCD Policy Areas',
+          name: 'policy_areas',
+          widget: 'select',
+          multiple: true,
+          min: 0,
+          max: 5,
+          required: false,
+          options:
+            [
+              'CRPD',
+              'Civil Rights',
+              'Cultural Diversity',
+              'Education',
+              'Emergency Management',
+              'Employment',
+              'Financial Assistance & Incentives',
+              'Health Care',
+              'Housing',
+              'International',
+              'Long Term Services & Support',
+              'Technology',
+              'Transportation',
+              'Youth Perspectives',
+            ],
+          default: [''],
+        }
+      - {
+          label: 'Document',
+          name: 'document',
+          widget: 'file',
+          required: false,
+          allow_multiple: false,
+          media_folder: '/_assets/uploads/documents',
+          public_folder: 'documents',
+        }
+      - {
+          label: 'Audio',
+          name: 'audio',
+          widget: 'file',
+          required: false,
+          allow_multiple: false,
+          media_folder: '/_assets/uploads/audios',
+          public_folder: 'audios',
+        }
+      - {
+          label: 'Image',
+          name: 'image',
+          widget: 'image',
+          required: false,
+          choose_url: false,
+          media_folder: '/_assets/uploads/images',
+          public_folder: 'images',
+        }
+      - {
+          label: 'Image Alternative Tag',
+          name: 'image_alt',
+          widget: 'string',
+          required: true,
+        }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
   - label: Publications
     name: publications
     folder: _publications/
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    path: '{{publication_year}}/{{slug}}'
     editor:
       preview: false
     fields:
-      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'post'}
-      - {label: "Title", name: "title", widget: "string"}
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
+      - { label: 'Title', name: 'title', widget: 'string' }
       - {
-          label: "Publish Date",
-          name: "date",
-          widget: "datetime",
+          label: 'Publish Date',
+          name: 'date',
+          widget: 'datetime',
           format: 'MMMM D, YYYY',
-          dateFormat: 'MMMM D, YYYY',
-          timeFormat: false
+          date_format: 'MMMM D, YYYY',
+          time_format: false,
         }
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {
+          label: 'Publication Year',
+          name: 'publication_year',
+          widget: 'number',
+          default: 2021,
+          value_type: 'int',
+          min: 1980,
+          max: 2030,
+          step: 1,
+        }
+      - {
+          label: 'Report Document',
+          name: 'document',
+          widget: 'file',
+          required: false,
+          allow_multiple: false,
+          media_folder: '/_assets/uploads/reports/{{report_year}}',
+          public_folder: 'reports/{{report_year}}',
+        }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
   - label: Reports
     name: reports
     folder: _reports/
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: '{{year}}-{{month}}-{{slug}}'
+    path: '{{report_year}}/{{slug}}'
     editor:
       preview: false
     fields:
-      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'post'}
-      - {label: "Title", name: "title", widget: "string"}
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
+      - { label: 'Title', name: 'title', widget: 'string' }
       - {
-          label: "Publish Date",
-          name: "date",
-          widget: "datetime",
+          label: 'Publish Date',
+          name: 'date',
+          widget: 'datetime',
           format: 'MMMM D, YYYY',
-          dateFormat: 'MMMM D, YYYY',
-          timeFormat: false
+          date_format: 'MMMM D, YYYY',
+          time_format: false,
         }
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {
+          label: 'Report Year',
+          name: 'report_year',
+          widget: 'number',
+          default: 2021,
+          value_type: 'int',
+          min: 1980,
+          max: 2030,
+          step: 1,
+        }
+      - {
+          label: 'Report Document',
+          name: 'document',
+          widget: 'file',
+          required: false,
+          allow_multiple: false,
+          media_folder: '/_assets/uploads/reports/{{report_year}}',
+          public_folder: 'reports/{{report_year}}',
+        }
+      - {
+          label: 'Image',
+          name: 'image',
+          widget: 'image',
+          required: false,
+          choose_url: false,
+          media_folder: '/_assets/uploads/images',
+          public_folder: 'images',
+        }
+      - {
+          label: 'Image Alternative Tag',
+          name: 'image_alt',
+          widget: 'string',
+          required: true,
+        }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
