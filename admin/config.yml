@@ -25,6 +25,10 @@ media_folder: _assets
 public_folder: /
 publish_mode: editorial_workflow
 logo_url: https://federalist.18f.gov/assets/images/federalist-logo.png
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
 
 collections:
   - label: Correspondence
@@ -50,19 +54,58 @@ collections:
     name: meetings
     folder: _meetings/
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: '{{slug}}'
+    path: '{{meeting_year}}/{{slug}}'
     editor:
       preview: false
     fields:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
       - { label: 'Title', name: 'title', widget: 'string' }
       - {
-          label: 'Publish Date',
+          label: 'Federal Register Notice',
+          name: 'federal_register_notice',
+          widget: 'string',
+          hint: 'Enter the Federal Register Notice URL.',
+          pattern: [
+            '[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)',
+            'Must be a valid URL.'
+          ]
+        }
+      - {
+          label: 'Meeting Year',
+          name: 'meeting_year',
+          widget: 'number',
+          default: 2021,
+          value_type: 'int',
+          min: 1980,
+          max: 2030,
+          step: 1,
+        }
+      - {
+          label: 'Meeting Date',
           name: 'date',
           widget: 'datetime',
           format: 'MMMM D, YYYY',
           date_format: 'MMMM D, YYYY',
           time_format: false,
+        }
+      - {
+          label: 'Agenda',
+          name: 'agenda',
+          widget: 'file',
+          required: false,
+          allow_multiple: false,
+          media_folder: '/_assets/uploads/meetings/{{year}}/{{slug}}',
+          public_folder: 'meetings/{{year}}/{{slug}}',
+        }
+      - {
+          label: 'Minutes',
+          name: 'minutes',
+          widget: 'file',
+          required: false,
+          allow_multiple: false,
+          media_folder: '/_assets/uploads/meetings/{{year}}/{{slug}}',
+          public_folder: 'meetings/{{year}}/{{slug}}',
         }
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - label: Newsroom
