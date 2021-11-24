@@ -6,7 +6,7 @@
 // Example - Override the background image in the hero component using SASS:
 // $theme-hero-image: asset_path("whatever-the-default-is.png");
 
-@import "uswds";
+@import 'uswds';
 
 // Example - Override the background image in the hero component using CSS:
 //.usa-hero {
@@ -49,4 +49,22 @@
   .paginate-button {
     display: block;
   }
+}
+
+.usa-social-link--facebook {
+  background-image: asset_url('facebook.svg'),
+    linear-gradient(transparent, transparent);
+  background-repeat: no-repeat;
+}
+
+.usa-social-link--instagram {
+  background-image: asset_url('instagram.svg'),
+    linear-gradient(transparent, transparent);
+  background-repeat: no-repeat;
+}
+
+.usa-social-link--twitter {
+  background-image: asset_url('twitter.svg'),
+    linear-gradient(transparent, transparent);
+  background-repeat: no-repeat;
 }
