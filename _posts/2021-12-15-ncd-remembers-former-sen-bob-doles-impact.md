@@ -2,6 +2,8 @@
 layout: post
 title: "NCD remembers former Sen. Bob Dole's impact "
 date: December 6, 2021
+excerpt: WASHINGTON--The following is a statement by the National Council on
+  Disability regarding the passing of former U.S. Sen. Robert "Bob" J. Dole.
 newsroom_type: Newsletter
 policy_areas:
   - ""
