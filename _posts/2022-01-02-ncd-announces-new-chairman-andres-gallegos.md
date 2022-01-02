@@ -1,7 +1,7 @@
 ---
 layout: post
 title: NCD announces new Chairman Andrés Gallegos
-date: January 2, 2022
+date: January 21, 2021
 excerpt: WASHINGTON--The National Council on Disability (NCD) – an independent,
   nonpartisan federal agency that advises the President, Congress and other
   federal agencies on disability policy – announces Andrés J. Gallegos, of
