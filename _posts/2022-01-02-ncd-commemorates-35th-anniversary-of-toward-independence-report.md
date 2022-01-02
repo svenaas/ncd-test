@@ -2,6 +2,9 @@
 layout: post
 title: NCD commemorates 35th anniversary of ‘Toward Independence’ report
 date: February 1, 2021
+excerpt: WASHINGTON--The National Council on Disability (NCD) today marks the
+  35-year anniversary of a federal report that led to the drafting of the
+  landmark Americans with Disabilities Act (ADA).
 newsroom_type: Newsletter
 policy_areas:
   - Civil Rights
