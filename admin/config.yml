@@ -133,8 +133,8 @@ collections:
           required: true,
           widget: 'select',
           options:
-            ['Funding Opportunities', 'Speech', 'Testimonial', 'Newsletter'],
-          default: 'Newsletter',
+            ['','Funding Opportunities', 'Speech', 'Testimonial', 'Newsletter'],
+          default: '',
         }
       - {
           label: 'NCD Policy Areas',
