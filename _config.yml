@@ -77,20 +77,21 @@ ga:
 
 # Site Navigation
 primary_navigation:
+  - name: About the Council
+    url: "/#main-content"
   - name: Home
     url: /
-  - name: Newsroom
+  - name: News
     url: /newsroom/
   - name: Reports
     url: /reports/
-  - name: Correspondences
+  - name: Correspondence
     url: /correspondences/
   - name: Meetings & Events
     url: /meetings/
-  - name: Publications
-    url: /publications/
-  - name: About
-    url: "/#main-content"
+  - name: Resources
+    url: /resources/
+
 
 secondary_navigation:
   - name: Contact US
@@ -132,7 +133,7 @@ collections:
   meetings:
     output: true
     permalink: /meeting/:name/
-  publications:
+  resources:
     output: true
     permalink: /publication/:path/
   reports:
