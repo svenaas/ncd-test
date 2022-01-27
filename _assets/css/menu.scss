@@ -1,0 +1,9 @@
+.usa-nav__primary-item {
+  @extend .usa-nav__primary-item;
+
+  a, button {
+    :hover {
+      @extend .text-primary-vivid;
+    }
+  }
+}

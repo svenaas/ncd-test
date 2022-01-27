@@ -1,29 +1,10 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
-##########################################################################################
-# Be sure to edit the values below
-##########################################################################################
-
 title: National Council on Disability
 email: nsabula@ncd.gov
 description: >- # this means to ignore newlines until "baseurl:"
-  Agency Name (EAC) Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  Aenean et sapien a leo auctor scelerisque quis nec magna. Sed dictum ante a risus vehicula facilisis.
-baseurl: "" # the subpath of your site, e.g. /blog
+  An independent federal agency committed to
+  disability policy leadership since 1978
+baseurl: ""
+logo: true
 # url: "https://ncd.gov" # the base hostname & protocol for your site, e.g. https://example.com.
   # Required to support the jekyll-sitemap plugin below.
   # Uncomment the url line when ready to push to production. If using different branches for multiple
@@ -77,20 +58,26 @@ ga:
 
 # Site Navigation
 primary_navigation:
-  - name: About the Council
-    url: "/#main-content"
-  - name: Home
-    url: /
+  - name: About Our Council
+    children:
+      - name: Purpose and Vision
+        url: /vision/
+      - name: Members and Leadership
+        url: /members-and-leadership/
+      - name: Meetings & Events
+        url: /meetings/
+      - name: Committees and Communities
+        url: /committees-communities/
+  - name: Policies, Publishing & Resources
+    children:
+      - name: Reports
+        url: /reports/
+      - name: Correspondence
+        url: /correspondences/
+      - name: Resources
+        url: /resources/
   - name: News
     url: /newsroom/
-  - name: Reports
-    url: /reports/
-  - name: Correspondence
-    url: /correspondences/
-  - name: Meetings & Events
-    url: /meetings/
-  - name: Resources
-    url: /resources/
 
 
 secondary_navigation:
