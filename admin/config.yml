@@ -26,11 +26,24 @@ public_folder: /
 publish_mode: editorial_workflow
 logo_url: https://federalist.18f.gov/assets/images/federalist-logo.png
 slug:
-  encoding: "ascii"
+  encoding: 'ascii'
   clean_accents: true
-  sanitize_replacement: "-"
+  sanitize_replacement: '-'
 
 collections:
+  - label: Committees & Communities
+    name: committees-communities
+    folder: _committees-communities/
+    create: true
+    slug: '{{name}}'
+    path: '{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
+      - { label: 'Name', name: 'name', widget: 'string' }
+      - { label: 'Excerpt', name: 'excerpt', required: false, widget: 'text' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
   - label: Correspondence
     name: correspondence
     folder: _correspondence/
@@ -66,10 +79,11 @@ collections:
           name: 'federal_register_notice',
           widget: 'string',
           hint: 'Enter the Federal Register Notice URL.',
-          pattern: [
-            '[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)',
-            'Must be a valid URL.'
-          ]
+          pattern:
+            [
+              '[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)',
+              'Must be a valid URL.',
+            ],
         }
       - {
           label: 'Meeting Year',
@@ -108,6 +122,28 @@ collections:
           public_folder: 'meetings/{{year}}/{{slug}}',
         }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  - label: Members & Leadership
+    name: members-and-leadership
+    folder: _members-and-leadership/
+    create: true
+    slug: '{{member_name}}'
+    path: '{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
+      - { label: 'Member Name', name: 'member_name', widget: 'string' }
+      - { label: 'Member Title', name: 'member_title', widget: 'string' }
+      - { label: 'Excerpt', name: 'excerpt', required: false, widget: 'text' }
+      - {
+          label: 'Start Date',
+          name: 'start_date',
+          widget: 'datetime',
+          format: 'MMMM D, YYYY',
+          date_format: 'MMMM D, YYYY',
+          time_format: false,
+        }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
   - label: Newsroom
     name: posts
     folder: _posts/
@@ -133,7 +169,13 @@ collections:
           required: true,
           widget: 'select',
           options:
-            ['','Funding Opportunities', 'Speech', 'Testimonial', 'Newsletter'],
+            [
+              '',
+              'Funding Opportunities',
+              'Speech',
+              'Testimonial',
+              'Newsletter',
+            ],
           default: '',
         }
       - {

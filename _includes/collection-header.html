@@ -1,0 +1,22 @@
+<div
+  id="{{ include.title | slugify }}"
+  class="border-bottom-1 border-gray-5"
+>
+  <div>
+    <h1
+      class="
+        font-sans-3xl
+        line-height-sans-2
+        margin-0
+        text-primary-vivid
+      "
+    >
+      {{ include.title }}
+    </h1>
+    <span
+      class="text-base-lighter font-serif-md display-block padding-top-1 text-base"
+    >
+      {{ include.description }}
+    </span>
+  </div>
+</div>

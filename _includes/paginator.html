@@ -1,0 +1,97 @@
+<div class="grid-row padding-y-2">
+  <div
+    class="
+      tablet:grid-col-4
+      text-center
+      tablet:order-2
+      font-body-xs
+      text-base
+    "
+  >
+    Page {{ include.paginator.page }} of {{ include.paginator.total_pages }}
+  </div>
+  <div class="tablet:grid-col-4 text-right tablet:order-3">
+    {% if include.paginator.next_page %}
+      <a
+        href="{{ include.paginator.next_page_path | prepend: site.baseurl }}"
+        class="
+          paginate-link
+          usa-link
+          text-no-underline
+          text-bold
+          text-primary-vivid
+          hover:text-primary-dark
+          tablet:margin-top-0
+        "
+      >
+        <span class="text-normal">
+          Next
+        </span>
+        {{ include.paginator.per_page }}
+        <span class="text-normal">
+          {{ include.collection_type }} &rsaquo;
+        </span>
+      </a>
+      <a
+        href="{{ include.paginator.next_page_path | prepend: site.baseurl }}"
+        class="
+          margin-top-3
+          paginate-button
+          text-primary-vivid
+          hover:text-primary-dark
+          usa-button
+        "
+      >
+        <span class="text-normal">
+          Next
+        </span>
+        {{ include.paginator.per_page }}
+        <span class="text-normal">
+          {{ include.collection_type }} &rsaquo;
+        </span>
+      </a>
+    {% endif %}
+  </div>
+  <div class="tablet:grid-col-4 text-left tablet:order-1">
+    {% if include.paginator.previous_page %}
+    <a
+      href="{{ include.paginator.previous_page_path | prepend: site.baseurl }}"
+      class="
+        paginate-link
+        usa-link
+        text-no-underline
+        text-bold
+        text-primary-vivid
+        hover:text-primary-dark
+        tablet:margin-top-0
+      "
+    >
+      <span class="text-normal">
+        &lsaquo; Previous
+      </span>
+      {{ include.paginator.per_page }}
+      <span class="text-normal">
+        {{ include.collection_type }}
+      </span>
+    </a>
+    <a
+      href="{{ include.paginator.previous_page_path | prepend: site.baseurl }}"
+      class="
+        margin-top-3
+        paginate-button
+        text-primary-vivid
+        hover:text-primary-dark
+        usa-button
+      "
+    >
+      <span class="text-normal">
+        &lsaquo; Previous
+      </span>
+      {{ include.paginator.per_page }}
+      <span class="text-normal">
+        {{ include.collection_type }}
+      </span>
+    </a>
+    {% endif %}
+  </div>
+</div>

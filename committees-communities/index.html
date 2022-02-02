@@ -1,9 +1,9 @@
 ---
 layout: wide
-permalink: /publications/
+permalink: /committees-communities/
 pagination:
   enabled: true
-  collection: publications
+  collection: committees-communities
 ---
 
 <div class="grid-container">
@@ -11,12 +11,10 @@ pagination:
     <div class="desktop:grid-col-8 usa-prose padding-right-4">
       {%
         include collection-header.html
-        title="Publications"
+        title="Committees & Communities"
         description="
-          NCD publications and policy briefs contain data and provide recommendations to the Administration,
-          Congress, and executive branch agencies on the broad spectrum of issues that affect people with
-          disabilities. Data provides basis for effective cross-government and public-private collaboration
-          on issues affecting people with disabilities.
+          The committees and communities working with the National Council on Disability
+          to help further the advancement of policy.
         "
       %}
       {% for post in paginator.posts %}
@@ -29,13 +27,13 @@ pagination:
       {%
         include paginator.html
         paginator=paginator
-        collection_type="Publications"
+        collection_type="Committees & Communities"
       %}
     </div>
     {%
       include aside-page-links.html
-      title="Publications By Year"
-      items=site.publications
+      title="Committee Resources"
+      items=site.committees-communities
     %}
   </div>
 </div>

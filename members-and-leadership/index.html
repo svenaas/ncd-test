@@ -1,9 +1,9 @@
 ---
 layout: wide
-permalink: /publications/
+permalink: /members-and-leadership/
 pagination:
   enabled: true
-  collection: publications
+  collection: members-and-leadership
 ---
 
 <div class="grid-container">
@@ -11,12 +11,10 @@ pagination:
     <div class="desktop:grid-col-8 usa-prose padding-right-4">
       {%
         include collection-header.html
-        title="Publications"
+        title="Members & Leadership"
         description="
-          NCD publications and policy briefs contain data and provide recommendations to the Administration,
-          Congress, and executive branch agencies on the broad spectrum of issues that affect people with
-          disabilities. Data provides basis for effective cross-government and public-private collaboration
-          on issues affecting people with disabilities.
+          The members and leadership of the National Council on Disability
+          that lead agency priorities, policy trends, and other agency business.
         "
       %}
       {% for post in paginator.posts %}
@@ -29,13 +27,13 @@ pagination:
       {%
         include paginator.html
         paginator=paginator
-        collection_type="Publications"
+        collection_type="Members"
       %}
     </div>
     {%
       include aside-page-links.html
-      title="Publications By Year"
-      items=site.publications
+      title="Members"
+      items=site.members-and-leadership
     %}
   </div>
 </div>
