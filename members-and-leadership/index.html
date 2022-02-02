@@ -1,0 +1,39 @@
+---
+layout: wide
+permalink: /members-and-leadership/
+pagination:
+  enabled: true
+  collection: members-and-leadership
+---
+
+<div class="grid-container">
+  <div class="grid-row">
+    <div class="desktop:grid-col-8 usa-prose padding-right-4">
+      {%
+        include collection-header.html
+        title="Members & Leadership"
+        description="
+          The members and leadership of the National Council on Disability
+          that lead agency priorities, policy trends, and other agency business.
+        "
+      %}
+      {% for post in paginator.posts %}
+        {%
+          include paginated-collection-item.html
+          post=post
+        %}
+      {% endfor %}
+      <!-- Pagination links -->
+      {%
+        include paginator.html
+        paginator=paginator
+        collection_type="Members"
+      %}
+    </div>
+    {%
+      include aside-page-links.html
+      title="Members"
+      items=site.members-and-leadership
+    %}
+  </div>
+</div>

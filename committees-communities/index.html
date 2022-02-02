@@ -1,0 +1,39 @@
+---
+layout: wide
+permalink: /committees-communities/
+pagination:
+  enabled: true
+  collection: committees-communities
+---
+
+<div class="grid-container">
+  <div class="grid-row">
+    <div class="desktop:grid-col-8 usa-prose padding-right-4">
+      {%
+        include collection-header.html
+        title="Committees & Communities"
+        description="
+          The committees and communities working with the National Council on Disability
+          to help further the advancement of policy.
+        "
+      %}
+      {% for post in paginator.posts %}
+        {%
+          include paginated-collection-item.html
+          post=post
+        %}
+      {% endfor %}
+      <!-- Pagination links -->
+      {%
+        include paginator.html
+        paginator=paginator
+        collection_type="Committees & Communities"
+      %}
+    </div>
+    {%
+      include aside-page-links.html
+      title="Committee Resources"
+      items=site.committees-communities
+    %}
+  </div>
+</div>

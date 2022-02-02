@@ -114,9 +114,15 @@ collections:
   pages:
     output: true
     permalink: /:path/
+  committees-communities:
+    output: true
+    permalink: /committee-community/:name/
   correspondence:
     output: true
     permalink: /correspondence/:name/
+  members-and-leadership:
+    output: true
+    permalink: /members-and-leadership/:name/
   meetings:
     output: true
     permalink: /meeting/:name/
