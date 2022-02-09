@@ -1,6 +1,6 @@
 ---
 layout: single-page
-permalink: /resources/faq
+permalink: /resources/faq/
 title: FAQ
 description: Frequently asked questions regarding the NCD.
 ---
