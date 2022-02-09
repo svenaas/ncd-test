@@ -76,6 +76,32 @@ primary_navigation:
         url: /correspondences/
       - name: Resources
         url: /resources/
+      - name: FAQ
+        url: /resources/faq/
+  - name: Accountability
+    children:
+      - name: Accountability
+        url: /accountability/
+      - name: Vulnerability Disclosure Policy
+        url: /accountability/vulnerability-disclosure-policy/
+      - name: Buy American Act Reports
+        url: /accountability/buy-american-act-reports/
+      - name: Government Performance and Results Act Reports
+        url: /accountability/government-performance-and-results-act-reports/
+      - name: Congressional Budget Justification Reports
+        url: /accountability/congressional-budget-justification-reports/
+      - name: Financial Audit Reports
+        url: /accountability/financial-audit-reports/
+      - name: NCD Strategic Plan
+        url: /accountability/ncd-strategic-plan/
+      - name: NCD Annual Employee Survey
+        url: /accountability/ncd-annual-employee-survey/
+      - name: NCD Bylaws
+        url: /accountability/ncd-bylaws/
+      - name: No Fear Act
+        url: /accountability/no-fear-act/
+      - name: Office of Special Counsel
+        url: https://osc.gov/
   - name: News
     url: /newsroom/
 
@@ -114,6 +140,9 @@ collections:
   pages:
     output: true
     permalink: /:path/
+  accountability:
+    output: true
+    permalink: /accountability/:name/
   committees-communities:
     output: true
     permalink: /committee-community/:name/

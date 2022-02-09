@@ -31,6 +31,39 @@ slug:
   sanitize_replacement: '-'
 
 collections:
+  - label: Accountability
+    name: accountability
+    folder: _accountability/
+    create: true
+    slug: '{{title}}'
+    path: '{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - {
+          label: 'Publish Date',
+          name: 'date',
+          widget: 'datetime',
+          format: 'MMMM D, YYYY',
+          date_format: 'MMMM D, YYYY',
+          time_format: false,
+        }
+      - {
+          label: 'Redirect from',
+          name: 'redirect_from',
+          widget: 'list',
+          required: false,
+          default: [],
+          field: {
+            label: 'Redirect Path',
+            name: 'redirect_from',
+            widget: 'string',
+            hint: '/my/other/path'
+          }
+        }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
   - label: Committees & Communities
     name: committees-communities
     folder: _committees-communities/
@@ -331,3 +364,28 @@ collections:
           required: true,
         }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  - label: Resource Pages
+    name: resources
+    files:
+    - label: Resources
+      name: resources
+      file: resources/index.md
+      editor:
+        preview: true
+      fields:
+        - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'single-page' }
+        - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/resources/' }
+        - { label: 'Title', name: 'title', widget: 'string' }
+        - { label: 'Description', name: 'description', widget: 'string' }
+        - { label: 'Body', name: 'body', widget: 'markdown' }
+    - label: FAQ
+      name: faq
+      file: resources/faq.md
+      editor:
+        preview: true
+      fields:
+        - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'single-page' }
+        - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/resources/faq/' }
+        - { label: 'Title', name: 'title', widget: 'string' }
+        - { label: 'Description', name: 'description', widget: 'string' }
+        - { label: 'Body', name: 'body', widget: 'markdown' }

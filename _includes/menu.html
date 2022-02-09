@@ -37,9 +37,6 @@ where we provide an easy way to manage your navigation system
                 <span>
                   {{ nav_item.name | escape }}
                 </span>
-                <span class="text-bold">
-                  +
-                </span>
               </button>
               <ul id="{{ nav_id }}" class="usa-nav__submenu desktop:bg-primary-vivid">
                 {% for subnav_item in nav_item.children %}
