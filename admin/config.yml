@@ -56,12 +56,13 @@ collections:
           widget: 'list',
           required: false,
           default: [],
-          field: {
-            label: 'Redirect Path',
-            name: 'redirect_from',
-            widget: 'string',
-            hint: '/my/other/path'
-          }
+          field:
+            {
+              label: 'Redirect Path',
+              name: 'redirect_from',
+              widget: 'string',
+              hint: '/my/other/path',
+            },
         }
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - label: Committees & Communities
@@ -367,25 +368,92 @@ collections:
   - label: Resource Pages
     name: resources
     files:
-    - label: Resources
-      name: resources
-      file: resources/index.md
-      editor:
-        preview: true
-      fields:
-        - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'single-page' }
-        - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/resources/' }
-        - { label: 'Title', name: 'title', widget: 'string' }
-        - { label: 'Description', name: 'description', widget: 'string' }
-        - { label: 'Body', name: 'body', widget: 'markdown' }
-    - label: FAQ
-      name: faq
-      file: resources/faq.md
-      editor:
-        preview: true
-      fields:
-        - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'single-page' }
-        - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/resources/faq/' }
-        - { label: 'Title', name: 'title', widget: 'string' }
-        - { label: 'Description', name: 'description', widget: 'string' }
-        - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: Resources
+        name: resources
+        file: resources/index.md
+        editor:
+          preview: true
+        fields:
+          - {
+              label: 'Layout',
+              name: 'layout',
+              widget: 'hidden',
+              default: 'single-page',
+            }
+          - {
+              label: 'Permalink',
+              name: 'permalink',
+              widget: 'hidden',
+              default: '/resources/',
+            }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: FAQ
+        name: faq
+        file: resources/faq.md
+        editor:
+          preview: true
+        fields:
+          - {
+              label: 'Layout',
+              name: 'layout',
+              widget: 'hidden',
+              default: 'single-page',
+            }
+          - {
+              label: 'Permalink',
+              name: 'permalink',
+              widget: 'hidden',
+              default: '/resources/faq/',
+            }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+  - label: Adhoc Pages
+    name: adhoc-pages
+    description: These are pages that are not apart of a data collection that
+    folder: pages
+    create: true
+    slug: '{{title}}'
+    path: '{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - {
+          label: 'Layout',
+          name: 'layout',
+          widget: 'hidden',
+          default: 'single-page',
+        }
+      - {
+          label: 'Published',
+          name: 'published',
+          description: 'Set to true to publish or false to un-publish a page.',
+          widget: 'boolean',
+          default: false
+        }
+      - {
+          label: 'Permalink',
+          name: 'permalink',
+          description: 'The URL path for the page.',
+          widget: string,
+          hint: '/the-page-name/',
+        }
+      - {
+          label: 'Redirect from',
+          name: 'redirect_from',
+          description: 'An old URL path you want to redirect to this page.',
+          widget: 'list',
+          required: false,
+          default: [],
+          field:
+            {
+              label: 'Redirect Path',
+              name: 'redirect_from',
+              widget: 'string',
+              hint: '/the/old/path/',
+            },
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
