@@ -155,9 +155,12 @@ collections:
   meetings:
     output: true
     permalink: /meeting/:name/
+  publications:
+    output: true
+    permalink: /publications/:path/
   resources:
     output: true
-    permalink: /publication/:path/
+    permalink: /resources/:path/
   reports:
     output: true
     permalink: /report/:name/
