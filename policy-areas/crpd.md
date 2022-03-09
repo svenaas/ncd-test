@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: autopage_tags
 title: CRPD
 pagination:
   enabled: true

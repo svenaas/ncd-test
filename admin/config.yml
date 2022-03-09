@@ -462,7 +462,6 @@ autopages:
   enabled: true
   policy-areas:
     layouts:
-    #  - autopage_collections_tags.html
       - autopage_tags.html
     enabled: true
 
