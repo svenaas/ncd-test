@@ -18,8 +18,8 @@ backend:
 #   name: git-gateway
 # local_backend: true
 
-##
-##
+gems:
+  - jekyll-paginate-v2
 
 media_folder: _assets
 public_folder: /
@@ -457,3 +457,26 @@ collections:
         }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+
+autopages:
+  enabled: true
+  policy-areas:
+    layouts:
+    #  - autopage_collections_tags.html
+      - autopage_tags.html
+    enabled: true
+
+# Pagination Settings
+pagination:
+  enabled: true
+  per_page: 3
+  permalink: '/:num/'
+  title: ':title | :num of :max'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+ # extension: htm
+ # indexpage: 'default'
+  trail:
+    before: 2
+    after: 2
