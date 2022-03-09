@@ -365,6 +365,81 @@ collections:
           required: true,
         }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  - label: Featured Content
+    name: featured
+    files:
+      - label: featured
+        name: featured
+        file: _data/featured.yaml
+        editor:
+          preview: true
+        fields:
+          - label: "Meetings and Events"
+            name: "meetings"
+            widget: "list"
+            fields:
+            - label: "Meetings and Events"
+              name: "featured"
+              widget: "relation"
+              collection: "meetings"
+              search_fields: ["title"]
+              value_field: "{{title}}"
+              display_fields: ["title", "excerpt"]
+          - label: "Reports"
+            name: "reports"
+            widget: "list"
+            fields:
+            - label: "Featured"
+              name: "featured"
+              widget: "relation"
+              collection: "reports"
+              search_fields: ["title"]
+              value_field: "{{title}}"
+              display_fields: ["title"]
+          - label: "Newsposts"
+            name: "posts"
+            widget: "list"
+            fields:
+            - label: "Featured"
+              name: "featured"
+              widget: "relation"
+              collection: "posts"
+              search_fields: ["title"]
+              value_field: "{{title}}"
+              display_fields: ["title"]
+          - label: "Correspondence"
+            name: "correspondence"
+            widget: "list"
+            fields:
+            - label: "Featured"
+              name: "featured"
+              widget: "relation"
+              collection: "correspondence"
+              search_fields: ["title"]
+              value_field: "{{title}}"
+              display_fields: ["title"]
+          - label: "Publications"
+            name: "publications"
+            widget: "list"
+            fields:
+            - label: "Featured"
+              name: "featured"
+              widget: "relation"
+              collection: "publications"
+              search_fields: ["title"]
+              value_field: "{{title}}"
+              display_fields: ["title"]
+          - label: "Resources"
+            name: "resources"
+            widget: "list"
+            fields:
+            - label: "Featured"
+              name: "featured"
+              widget: "relation"
+              collection: "resources"
+              search_fields: ["title"]
+              value_field: "{{title}}"
+              display_fields: ["title"]
   - label: Resource Pages
     name: resources
     files:
