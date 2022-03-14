@@ -157,6 +157,19 @@ collections:
           time_format: false,
         }
       - {
+          label: 'Policy Areas',
+          name: 'policy_areas',
+          widget: 'relation',
+          collection: 'policy-areas',
+          search_fields: ['title'],
+          value_field: 'title',
+          display_fields: ['title'],
+          multiple: true,
+          min: 0,
+          max: 5,
+          required: false,
+        }
+      - {
           label: 'Agenda',
           name: 'agenda',
           widget: 'file',
