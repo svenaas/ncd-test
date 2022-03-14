@@ -31,6 +31,12 @@ slug:
   sanitize_replacement: '-'
 
 collections:
+  - label: Policy Areas
+    name: policy-areas
+    folder: _policy-areas/
+    create: false
+    fields:
+    - { label: 'Title', name: 'title', widget: 'string' }
   - label: Accountability
     name: accountability
     folder: _accountability/
@@ -213,31 +219,17 @@ collections:
           default: '',
         }
       - {
-          label: 'NCD Policy Areas',
+          label: 'Policy Areas',
           name: 'policy_areas',
-          widget: 'select',
+          widget: 'relation',
+          collection: 'policy-areas',
+          search_fields: ['title'],
+          value_field: 'title',
+          display_fields: ['title'],
           multiple: true,
           min: 0,
           max: 5,
           required: false,
-          options:
-            [
-              'CRPD',
-              'Civil Rights',
-              'Cultural Diversity',
-              'Education',
-              'Emergency Management',
-              'Employment',
-              'Financial Assistance & Incentives',
-              'Health Care',
-              'Housing',
-              'International',
-              'Long Term Services & Support',
-              'Technology',
-              'Transportation',
-              'Youth Perspectives',
-            ],
-          default: [''],
         }
       - {
           label: 'Document',
