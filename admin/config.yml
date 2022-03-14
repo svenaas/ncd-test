@@ -31,6 +31,12 @@ slug:
   sanitize_replacement: '-'
 
 collections:
+  - label: Policy Areas
+    name: policy-areas
+    folder: _policy-areas/
+    create: false
+    fields:
+    - { label: 'Title', name: 'title', widget: 'string' }
   - label: Accountability
     name: accountability
     folder: _accountability/
@@ -96,6 +102,19 @@ collections:
           date_format: 'MMMM D, YYYY',
           time_format: false,
         }
+      - {
+          label: 'Policy Areas',
+          name: 'policy_areas',
+          widget: 'relation',
+          collection: 'policy-areas',
+          search_fields: ['title'],
+          value_field: 'title',
+          display_fields: ['title'],
+          multiple: true,
+          min: 0,
+          max: 5,
+          required: false,
+        }
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - label: Meetings & Events
     name: meetings
@@ -136,6 +155,19 @@ collections:
           format: 'MMMM D, YYYY',
           date_format: 'MMMM D, YYYY',
           time_format: false,
+        }
+      - {
+          label: 'Policy Areas',
+          name: 'policy_areas',
+          widget: 'relation',
+          collection: 'policy-areas',
+          search_fields: ['title'],
+          value_field: 'title',
+          display_fields: ['title'],
+          multiple: true,
+          min: 0,
+          max: 5,
+          required: false,
         }
       - {
           label: 'Agenda',
@@ -213,31 +245,17 @@ collections:
           default: '',
         }
       - {
-          label: 'NCD Policy Areas',
+          label: 'Policy Areas',
           name: 'policy_areas',
-          widget: 'select',
+          widget: 'relation',
+          collection: 'policy-areas',
+          search_fields: ['title'],
+          value_field: 'title',
+          display_fields: ['title'],
           multiple: true,
           min: 0,
           max: 5,
           required: false,
-          options:
-            [
-              'CRPD',
-              'Civil Rights',
-              'Cultural Diversity',
-              'Education',
-              'Emergency Management',
-              'Employment',
-              'Financial Assistance & Incentives',
-              'Health Care',
-              'Housing',
-              'International',
-              'Long Term Services & Support',
-              'Technology',
-              'Transportation',
-              'Youth Perspectives',
-            ],
-          default: [''],
         }
       - {
           label: 'Document',
@@ -302,6 +320,19 @@ collections:
           step: 1,
         }
       - {
+          label: 'Policy Areas',
+          name: 'policy_areas',
+          widget: 'relation',
+          collection: 'policy-areas',
+          search_fields: ['title'],
+          value_field: 'title',
+          display_fields: ['title'],
+          multiple: true,
+          min: 0,
+          max: 5,
+          required: false,
+        }
+      - {
           label: 'Report Document',
           name: 'document',
           widget: 'file',
@@ -339,6 +370,19 @@ collections:
           min: 1980,
           max: 2030,
           step: 1,
+        }
+      - {
+          label: 'Policy Areas',
+          name: 'policy_areas',
+          widget: 'relation',
+          collection: 'policy-areas',
+          search_fields: ['title'],
+          value_field: 'title',
+          display_fields: ['title'],
+          multiple: true,
+          min: 0,
+          max: 5,
+          required: false,
         }
       - {
           label: 'Report Document',
