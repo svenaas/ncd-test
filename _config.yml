@@ -158,9 +158,12 @@ collections:
   policy-areas:
     output: true
     permalink: /policy-areas/:name/
+  publications:
+    output: true
+    permalink: /publications/:path/
   resources:
     output: true
-    permalink: /publication/:path/
+    permalink: /resources/:path/
   reports:
     output: true
     permalink: /report/:name/

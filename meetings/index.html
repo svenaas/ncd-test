@@ -24,11 +24,7 @@ pagination:
         %}
       {% endfor %}
       <!-- Pagination links -->
-      {%
-        include paginator.html
-        paginator=paginator
-        collection_type="Meetings"
-      %}
+      {% include paginator.html %}
     </div>
     {%
       include aside-page-links.html
