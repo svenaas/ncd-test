@@ -156,7 +156,7 @@ collections:
     output: true
     permalink: /meeting/:name/
   policy-areas:
-    output: true
+    output: false
     permalink: /policy-areas/:name/
   publications:
     output: true
